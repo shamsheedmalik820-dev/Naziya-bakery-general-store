@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Naziya Bakery & General Store</title>
+
+<style>
+
+/* =========================
+   BASIC
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#ffffff;
+    color:#111111;
+}
+
+:root{
+    --red:#e00000;
+    --dark-red:#b50000;
+    --white:#ffffff;
+    --black:#111111;
+    --light-red:#fff5f5;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    background:#ffffff;
+    border-bottom:4px solid var(--red);
+    padding:12px 5%;
+
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    box-shadow:0 3px 15px rgba(0,0,0,0.10);
+}
+
+.header-inner{
+    max-width:1200px;
+    margin:auto;
+
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.logo{
+    width:78px;
+    height:78px;
+
+    object-fit:cover;
+    border-radius:50%;
+
+    border:4px solid var(--red);
+    background:#ffffff;
+}
+
+.shop-name{
+    flex:1;
+}
+
+.shop-name h1{
+    color:var(--red);
+    font-size:27px;
+    font-weight:900;
+}
+
+.shop-name p{
+    margin-top:4px;
+    font-size:15px;
+    font-weight:bold;
+}
+
+.call-top{
+    text-decoration:none;
+
+    color:var(--red);
+
+    border:2px solid var(--red);
+
+    padding:10px 16px;
+
+    border-radius:8px;
+
+    font-weight:bold;
+
+    transition:0.3s;
+}
+
+.call-top:hover{
+    background:var(--red);
+    color:#ffffff;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav{
+    background:var(--red);
+
+    position:sticky;
+    top:102px;
+
+    z-index:999;
+}
+
+.nav-inner{
+    max-width:1100px;
+    margin:auto;
+
+    display:flex;
+    justify-content:center;
+
+    overflow-x:auto;
+}
+
+nav a{
+    color:#ffffff;
+    text-decoration:none;
+
+    padding:14px 18px;
+
+    font-size:14px;
+    font-weight:bold;
+
+    white-space:nowrap;
+
+    transition:0.3s;
+}
+
+nav a:hover{
+    background:var(--dark-red);
+}
+
+
+/* =========================
+   HOME
+========================= */
+
+#home{
+    min-height:70vh;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    padding:70px 20px;
+
+    background:#ffffff;
+
+    position:relative;
+    overflow:hidden;
+}
+
+.home-content{
+    max-width:850px;
+    position:relative;
+    z-index:2;
+}
+
+.badge{
+    display:inline-block;
+
+    background:var(--red);
+    color:#ffffff;
+
+    padding:9px 20px;
+
+    border-radius:30px;
+
+    font-size:13px;
+    font-weight:bold;
+
+    letter-spacing:1px;
+
+    margin-bottom:22px;
+}
+
+#home h2{
+    font-size:clamp(40px,8vw,72px);
+
+    line-height:1.05;
+
+    font-weight:900;
+
+    color:var(--black);
+
+    margin-bottom:22px;
+}
+
+#home h2 span{
+    color:var(--red);
+}
+
+#home p{
+    max-width:650px;
+
+    margin:auto;
+
+    color:#333333;
+
+    font-size:18px;
+
+    line-height:1.7;
+
+    margin-bottom:30px;
+}
+
+.main-button{
+    display:inline-block;
+
+    background:var(--red);
+    color:#ffffff;
+
+    text-decoration:none;
+
+    padding:15px 30px;
+
+    border-radius:8px;
+
+    font-weight:bold;
+    font-size:16px;
+
+    transition:0.3s;
+}
+
+.main-button:hover{
+    background:var(--dark-red);
+    transform:translateY(-3px);
+}
+
+
+/* =========================
+   GENERAL SECTION
+========================= */
+
+section{
+    padding:70px 6%;
+}
+
+.section-heading{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.section-heading h2{
+    font-size:40px;
+    color:var(--black);
+    font-weight:900;
+}
+
+.section-heading span{
+    color:var(--red);
+}
+
+.line{
+    width:70px;
+    height:5px;
+
+    background:var(--red);
+
+    margin:13px auto 0;
+
+    border-radius:20px;
+}
+
+
+/* =========================
+   PRODUCTS
+========================= */
+
+#products{
+    background:#ffffff;
+}
+
+.products{
+    max-width:1050px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(190px,1fr));
+
+    gap:18px;
+}
+
+.product{
+    background:#ffffff;
+
+    border:2px solid #eeeeee;
+
+    border-top:5px solid var(--red);
+
+    border-radius:14px;
+
+    padding:25px 15px;
+
+    text-align:center;
+
+    box-shadow:0 5px 18px rgba(0,0,0,0.06);
+
+    transition:0.3s;
+}
+
+.product:hover{
+    transform:translateY(-5px);
+
+    border-color:var(--red);
+}
+
+.product h3{
+    color:var(--red);
+    font-size:20px;
+}
+
+
+/* =========================
+   SHOP PHOTOS
+========================= */
+
+#shop{
+    background:var(--light-red);
+}
+
+.shop-note{
+    text-align:center;
+
+    color:#555555;
+
+    max-width:650px;
+
+    margin:-15px auto 35px;
+
+    line-height:1.6;
+}
+
+.shop-gallery{
+    max-width:1050px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:20px;
+}
+
+.photo-box{
+    background:#ffffff;
+
+    border:2px solid #eeeeee;
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+    box-shadow:0 6px 20px rgba(0,0,0,0.07);
+}
+
+.photo-box img{
+    width:100%;
+    height:240px;
+
+    display:block;
+
+    object-fit:cover;
+
+    background:#ffffff;
+}
+
+.photo-title{
+    padding:14px;
+
+    text-align:center;
+
+    color:var(--red);
+
+    font-weight:bold;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+#contact{
+    background:#ffffff;
+}
+
+.contact-box{
+    max-width:800px;
+
+    margin:auto;
+
+    padding:35px;
+
+    background:#ffffff;
+
+    border:2px solid #eeeeee;
+
+    border-top:6px solid var(--red);
+
+    border-radius:18px;
+
+    display:flex;
+
+    justify-content:space-between;
+    align-items:center;
+
+    gap:25px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,0.07);
+}
+
+.contact-box h3{
+    font-size:28px;
+}
+
+.owner{
+    color:#666666;
+    margin:5px 0 10px;
+}
+
+.phone{
+    color:var(--red);
+    font-size:21px;
+    font-weight:bold;
+}
+
+.call-button{
+    background:var(--red);
+    color:#ffffff;
+
+    text-decoration:none;
+
+    padding:15px 25px;
+
+    border-radius:8px;
+
+    font-weight:bold;
+
+    white-space:nowrap;
+}
+
+
+/* =========================
+   ADDRESS
+========================= */
+
+#address{
+    background:var(--light-red);
+}
+
+.addresses{
+    max-width:1000px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:25px;
+}
+
+.address{
+    background:#ffffff;
+
+    padding:28px;
+
+    border-left:6px solid var(--red);
+
+    border-radius:14px;
+
+    box-shadow:0 5px 18px rgba(0,0,0,0.05);
+}
+
+.address h3{
+    color:var(--red);
+
+    font-size:22px;
+
+    margin-bottom:15px;
+}
+
+.address p{
+    color:#222222;
+
+    font-size:17px;
+
+    line-height:1.8;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:var(--red);
+
+    color:#ffffff;
+
+    text-align:center;
+
+    padding:35px 20px;
+}
+
+footer h2{
+    font-size:25px;
+    margin-bottom:12px;
+}
+
+footer p{
+    margin:7px 0;
+}
+
+.footer-line{
+    margin-top:20px;
+
+    padding-top:15px;
+
+    border-top:1px solid rgba(255,255,255,0.4);
+
+    font-size:13px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:700px){
+
+    header{
+        padding:10px 4%;
+    }
+
+    .header-inner{
+        gap:10px;
+    }
+
+    .logo{
+        width:60px;
+        height:60px;
+    }
+
+    .shop-name h1{
+        font-size:18px;
+    }
+
+    .shop-name p{
+        font-size:12px;
+    }
+
+    .call-top{
+        display:none;
+    }
+
+    nav{
+        top:80px;
+    }
+
+    .nav-inner{
+        justify-content:flex-start;
+    }
+
+    nav a{
+        padding:12px 14px;
+        font-size:13px;
+    }
+
+    #home{
+        min-height:65vh;
+        padding:55px 18px;
+    }
+
+    #home h2{
+        font-size:42px;
+    }
+
+    #home p{
+        font-size:16px;
+    }
+
+    section{
+        padding:55px 5%;
+    }
+
+    .section-heading h2{
+        font-size:31px;
+    }
+
+    .products{
+        grid-template-columns:1fr 1fr;
+        gap:12px;
+    }
+
+    .product{
+        padding:20px 10px;
+    }
+
+    .product h3{
+        font-size:17px;
+    }
+
+    .shop-gallery{
+        grid-template-columns:1fr;
+    }
+
+    .contact-box{
+        flex-direction:column;
+        text-align:center;
+        padding:28px 20px;
+    }
+
+    .addresses{
+        grid-template-columns:1fr;
+    }
+
+    .address{
+        padding:23px;
+    }
+
+    .address p{
+        font-size:16px;
+    }
+
+    footer h2{
+        font-size:21px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+    <div class="header-inner">
+
+        <img
+            src="logo.png"
+            alt="Naziya Bakery Logo"
+            class="logo"
+        >
+
+        <div class="shop-name">
+
+            <h1>
+                Naziya Bakery & General Store
+            </h1>
+
+            <p>
+                Owner: Shakil Malik
+            </p>
+
+        </div>
+
+        <a
+            href="tel:9892368847"
+            class="call-top"
+        >
+            Call
+        </a>
+
+    </div>
+
+</header>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav>
+
+    <div class="nav-inner">
+
+        <a href="#home">Home</a>
+
+        <a href="#products">Products</a>
+
+        <a href="#shop">Shop Photos</a>
+
+        <a href="#contact">Contact</a>
+
+        <a href="#address">Address</a>
+
+    </div>
+
+</nav>
+
+
+<!-- =========================
+     HOME
+========================= -->
+
+<section id="home">
+
+    <div class="home-content">
+
+        <div class="badge">
+            WELCOME TO OUR SHOP
+        </div>
+
+        <h2>
+            Naziya Bakery
+            <span>& General Store</span>
+        </h2>
+
+        <p>
+            All essential commodities are available
+            in our shop.
+        </p>
+
+        <a
+            href="#products"
+            class="main-button"
+        >
+            View Products
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PRODUCTS
+========================= -->
+
+<section id="products">
+
+    <div class="section-heading">
+
+        <h2>
+            Our <span>Products</span>
+        </h2>
+
+        <div class="line"></div>
+
+    </div>
+
+
+    <div class="products">
+
+        <div class="product">
+            <h3>Breads</h3>
+        </div>
+
+        <div class="product">
+            <h3>Chocolates</h3>
+        </div>
+
+        <div class="product">
+            <h3>Cold Drink</h3>
+        </div>
+
+        <div class="product">
+            <h3>Egg</h3>
+        </div>
+
+        <div class="product">
+            <h3>Nankhatai</h3>
+        </div>
+
+        <div class="product">
+            <h3>Ice Cream</h3>
+        </div>
+
+        <div class="product">
+            <h3>Milk</h3>
+        </div>
+
+        <div class="product">
+            <h3>Dahi</h3>
+        </div><div class="product">
+    <h3>etc.</h3>
+</div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SHOP PHOTOS
+========================= -->
+
+<section id="shop">
+
+    <div class="section-heading">
+
+        <h2>
+            Shop <span>Photos</span>
+        </h2>
+
+        <div class="line"></div>
+
+    </div>
+
+
+    <p class="shop-note">
+        Shop photos can be added here later.
+    </p>
+
+
+    <div class="shop-gallery">
+
+        <div class="photo-box">
+
+            <img
+                src="shop1.jpg"
+                alt="Shop Photo"
+            >
+
+            <div class="photo-title">
+                Our Shop
+            </div>
+
+        </div>
+
+
+        <div class="photo-box">
+
+            <img
+                src="shop2.jpg"
+                alt="Shop Photo"
+            >
+
+            <div class="photo-title">
+                Our Shop
+            </div>
+
+        </div>
+
+
+        <div class="photo-box">
+
+            <img
+                src="shop3.jpg"
+                alt="Shop Photo"
+            >
+
+            <div class="photo-title">
+                Our Shop
+            </div>
+
+        </div>
+
+
+        <div class="photo-box">
+
+            <img
+                src="shop4.jpg"
+                alt="Shop Photo"
+            >
+
+            <div class="photo-title">
+                Our Shop
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section id="contact">
+
+    <div class="section-heading">
+
+        <h2>
+            <span>Contact</span> Us
+        </h2>
+
+        <div class="line"></div>
+
+    </div>
+
+
+    <div class="contact-box">
+
+        <div>
+
+            <h3>
+                Shakil Malik
+            </h3>
+
+            <p class="owner">
+                Owner
+            </p>
+
+            <p class="phone">
+                9892368847
+            </p>
+
+        </div>
+
+
+        <a
+            href="tel:9892368847"
+            class="call-button"
+        >
+            Call Now
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ADDRESS
+========================= -->
+
+<section id="address">
+
+    <div class="section-heading">
+
+        <h2>
+            Our <span>Address</span>
+        </h2>
+
+        <div class="line"></div>
+
+    </div>
+
+
+    <div class="addresses">
+
+
+        <!-- MARATHI -->
+
+        <div class="address">
+
+            <h3>
+                मराठी
+            </h3>
+
+            <p>
+                गाळा नं. २१, माळा ग्राउंड नं. १,
+                आकुर्ली रोड, लोकमान्य टिळक नगर,
+                कांदिवली (पूर्व), मुंबई – ४००१०१
+            </p>
+
+        </div>
+
+
+        <!-- ENGLISH -->
+
+        <div class="address">
+
+            <h3>
+                English
+            </h3>
+
+            <p>
+                Gala No. 21, Ground Floor No. 1,
+                Akurli Road, Lokmanya Tilak Nagar,
+                Kandivali (East), Mumbai – 400101
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <h2>
+        Naziya Bakery & General Store
+    </h2>
+
+    <p>
+        Owner: Shakil Malik
+    </p>
+
+    <p>
+        9892368847
+    </p>
+
+    <div class="footer-line">
+        © 2026 Naziya Bakery & General Store
+    </div>
+
+</footer>
+
+
+</body>
+</html>
